@@ -1,0 +1,510 @@
+{
+  "type": "RPGSystem",
+  "id": "agoc",
+  "name": "Alder's Glyph of Creation",
+  "abbreviation": "AGOC",
+  "version": "0.1.0",
+  "character_display_name": "name",
+  "character_stats": [
+    {
+      "id": "name",
+      "name": "Character Name",
+      "type": "base",
+      "value_type": "string",
+      "default_value": "",
+      "party_visible": true
+    },
+    {
+      "id": "level",
+      "name": "Level",
+      "abbreviation": "LVL",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 1,
+      "party_visible": true
+    },
+    {
+      "id": "body",
+      "name": "Body",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "speed",
+      "name": "Speed",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "mind",
+      "name": "Mind",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "will",
+      "name": "Will",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "presence",
+      "name": "Presence",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "health_boxes",
+      "name": "Health Boxes",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 1,
+      "party_visible": true
+    },
+    {
+      "id": "current_health",
+      "name": "Current Health",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 1,
+      "party_visible": true
+    },
+    {
+      "id": "mana",
+      "name": "Mana",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "current_mana",
+      "name": "Current Mana",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "armor_health",
+      "name": "Armor Health",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "shield_health",
+      "name": "Shield Health",
+      "type": "base",
+      "value_type": "integer",
+      "default_value": 0,
+      "party_visible": true
+    },
+    {
+      "id": "race",
+      "name": "Race",
+      "type": "base",
+      "value_type": "string",
+      "default_value": "",
+      "party_visible": true
+    },
+    {
+      "id": "background",
+      "name": "Background",
+      "type": "base",
+      "value_type": "string",
+      "default_value": "",
+      "party_visible": true
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "type": "base",
+      "value_type": "array",
+      "sub_value_type": "string",
+      "default_value": [],
+      "party_visible": false
+    },
+    {
+      "id": "abilities",
+      "name": "Abilities",
+      "type": "base",
+      "value_type": "array",
+      "sub_value_type": "string",
+      "default_value": [],
+      "party_visible": false
+    },
+    {
+      "id": "conditions",
+      "name": "Conditions",
+      "type": "base",
+      "value_type": "array",
+      "sub_value_type": "string",
+      "default_value": [],
+      "party_visible": true
+    },
+    {
+      "id": "notes",
+      "name": "Notes",
+      "type": "base",
+      "value_type": "string",
+      "default_value": "",
+      "party_visible": false
+    }
+  ],
+  "character_indexed_stats": [
+    "name",
+    "level",
+    "race",
+    "background"
+  ],
+  "character_sheet_sections": [
+    {
+      "id": "identity",
+      "title": "Identity",
+      "view": {
+        "id": "identity_view",
+        "type": "section",
+        "header": [
+          {
+            "id": "name_label",
+            "type": "text",
+            "text": {
+              "type": "stat",
+              "stat": "name"
+            },
+            "style": "title"
+          }
+        ],
+        "content": [
+          {
+            "id": "level_view",
+            "type": "stat",
+            "stat": "level",
+            "style": "block"
+          },
+          {
+            "id": "race_view",
+            "type": "stat",
+            "stat": "race"
+          },
+          {
+            "id": "background_view",
+            "type": "stat",
+            "stat": "background"
+          }
+        ]
+      }
+    },
+    {
+      "id": "attributes",
+      "title": "Attributes",
+      "view": {
+        "id": "attributes_view",
+        "type": "section",
+        "header": [
+          {
+            "id": "attributes_title",
+            "type": "text",
+            "text": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Attributes"
+            },
+            "style": "section"
+          }
+        ],
+        "content": [
+          {
+            "id": "body_view",
+            "type": "stat",
+            "stat": "body"
+          },
+          {
+            "id": "speed_view",
+            "type": "stat",
+            "stat": "speed"
+          },
+          {
+            "id": "mind_view",
+            "type": "stat",
+            "stat": "mind"
+          },
+          {
+            "id": "will_view",
+            "type": "stat",
+            "stat": "will"
+          },
+          {
+            "id": "presence_view",
+            "type": "stat",
+            "stat": "presence"
+          }
+        ]
+      }
+    },
+    {
+      "id": "resources",
+      "title": "Combat Resources",
+      "view": {
+        "id": "resources_view",
+        "type": "section",
+        "header": [
+          {
+            "id": "resources_title",
+            "type": "text",
+            "text": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Combat Resources"
+            },
+            "style": "section"
+          }
+        ],
+        "content": [
+          {
+            "id": "health_view",
+            "type": "stat",
+            "stat": "current_health"
+          },
+          {
+            "id": "health_max_view",
+            "type": "stat",
+            "stat": "health_boxes"
+          },
+          {
+            "id": "mana_view",
+            "type": "stat",
+            "stat": "current_mana"
+          },
+          {
+            "id": "mana_max_view",
+            "type": "stat",
+            "stat": "mana"
+          },
+          {
+            "id": "armor_view",
+            "type": "stat",
+            "stat": "armor_health"
+          },
+          {
+            "id": "shield_view",
+            "type": "stat",
+            "stat": "shield_health"
+          }
+        ]
+      }
+    },
+    {
+      "id": "skills_abilities",
+      "title": "Skills & Abilities",
+      "view": {
+        "id": "skills_abilities_view",
+        "type": "section",
+        "header": [],
+        "content": [
+          {
+            "id": "skills_view",
+            "type": "stat",
+            "stat": "skills"
+          },
+          {
+            "id": "abilities_view",
+            "type": "stat",
+            "stat": "abilities"
+          }
+        ]
+      }
+    },
+    {
+      "id": "conditions_notes",
+      "title": "Conditions & Notes",
+      "view": {
+        "id": "conditions_notes_view",
+        "type": "section",
+        "header": [],
+        "content": [
+          {
+            "id": "conditions_view",
+            "type": "stat",
+            "stat": "conditions"
+          },
+          {
+            "id": "notes_view",
+            "type": "stat",
+            "stat": "notes"
+          }
+        ]
+      }
+    }
+  ],
+  "character_search_item_view": {
+    "id": "character_search",
+    "type": "section",
+    "header": [
+      {
+        "id": "character_name",
+        "type": "text",
+        "text": {
+          "type": "stat",
+          "stat": "name"
+        },
+        "style": "title"
+      }
+    ],
+    "content": [
+      {
+        "id": "character_level",
+        "type": "stat",
+        "stat": "level"
+      },
+      {
+        "id": "character_race",
+        "type": "stat",
+        "stat": "race"
+      }
+    ]
+  },
+  "character_creation_flow": [
+    {
+      "type": "CharacterCreationPage",
+      "title": {
+        "type": "constant",
+        "value_type": "string",
+        "value": "Create an AGOC Character"
+      },
+      "view": {
+        "id": "creation_view",
+        "type": "section",
+        "header": [
+          {
+            "id": "intro",
+            "type": "text",
+            "text": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Enter your character details. Attribute allocation and derived values can be completed on the sheet."
+            },
+            "style": "text"
+          }
+        ],
+        "content": [
+          {
+            "id": "name_edit",
+            "type": "text",
+            "edit_stat": "name",
+            "label": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Character Name"
+            }
+          },
+          {
+            "id": "race_edit",
+            "type": "text",
+            "edit_stat": "race",
+            "label": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Race"
+            }
+          },
+          {
+            "id": "background_edit",
+            "type": "text",
+            "edit_stat": "background",
+            "label": {
+              "type": "constant",
+              "value_type": "string",
+              "value": "Background"
+            }
+          },
+          {
+            "id": "level_edit",
+            "type": "stat",
+            "stat": "level",
+            "edit_stat": "level"
+          },
+          {
+            "id": "body_edit",
+            "type": "stat",
+            "stat": "body",
+            "edit_stat": "body"
+          },
+          {
+            "id": "speed_edit",
+            "type": "stat",
+            "stat": "speed",
+            "edit_stat": "speed"
+          },
+          {
+            "id": "mind_edit",
+            "type": "stat",
+            "stat": "mind",
+            "edit_stat": "mind"
+          },
+          {
+            "id": "will_edit",
+            "type": "stat",
+            "stat": "will",
+            "edit_stat": "will"
+          },
+          {
+            "id": "presence_edit",
+            "type": "stat",
+            "stat": "presence",
+            "edit_stat": "presence"
+          }
+        ]
+      }
+    }
+  ],
+  "progression_systems": [],
+  "mechanics": [],
+  "resources": [],
+  "enumerated_types": [],
+  "dice": [
+    {
+      "id": "d4",
+      "name": "d4",
+      "sides": 4
+    },
+    {
+      "id": "d6",
+      "name": "d6",
+      "sides": 6
+    },
+    {
+      "id": "d8",
+      "name": "d8",
+      "sides": 8
+    },
+    {
+      "id": "d10",
+      "name": "d10",
+      "sides": 10
+    },
+    {
+      "id": "d12",
+      "name": "d12",
+      "sides": 12
+    },
+    {
+      "id": "d20",
+      "name": "d20",
+      "sides": 20
+    }
+  ],
+  "live_session_enabled": false
+}
